@@ -1,4 +1,4 @@
-#!/bin/env python
+#!/usr/bin/env python
 #----------------------------------------------------------------------------
 # Name:         TheDemoCode.py
 # Purpose:      Demonstrates widgets/controls available with wxPython

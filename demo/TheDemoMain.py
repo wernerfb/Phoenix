@@ -1,4 +1,4 @@
-#!/bin/env python
+#!/usr/bin/env python
 #---------------------------------------------------------------------------- #
 # Name:         TheDemoMain.py
 # Purpose:      Demonstarting the widget/controls available in wxPython
@@ -1663,6 +1663,9 @@ class TheDemo(wx.Frame):
         pageTexts = []
         parentName = self.leftTree.GetItemParent(self.currentItem).GetText()
 
+        if hasattr(self, 'dp'):
+            self.db.mgr.UnInit()
+
         for indx in xrange(self.centerPanel.GetPageCount() - 1, -1, -1):
             self.centerPanel.DeletePage(indx)
 
@@ -1671,9 +1674,9 @@ class TheDemo(wx.Frame):
 
         pageTexts.append("Demo")
         img1 = appearanceBmp.GetBitmap()
-        dp = tdc.wxPythonDemo(self)
-        self.centerPanel.AddPage(dp, "Demo", True, img1)
-        dp.LoadDemo(classString)
+        self.dp = tdc.wxPythonDemo(self)
+        self.centerPanel.AddPage(self.dp, "Demo", True, img1)
+        self.dp.LoadDemo(classString)
 
         if data is None:
             self.centerPanel.AddPage(EmptyPage(self, "Unable to connect to the internet"), "No Connection",
