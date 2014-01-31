@@ -355,6 +355,7 @@ class AuiTabContainerButton(object):
         self.bitmap = wx.NullBitmap                       # button's hover bitmap
         self.dis_bitmap = wx.NullBitmap                   # button's disabled bitmap
         self.rect = wx.Rect()                             # button's hit rectangle
+        self.help_string = ""
 
 
 # ----------------------------------------------------------------------
