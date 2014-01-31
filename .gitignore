@@ -58,3 +58,4 @@
 /wx/*.dylib
 /wx/libwx_*
 /wx/locale
+/demo/*.pkl
