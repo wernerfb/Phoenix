@@ -468,8 +468,6 @@ class DemoCodePanel(wx.Panel):
         self.demoModules.LoadFromFile(modModified, modifiedFilename)
         self.ActiveModuleChanged()
 
-        self.mainFrame.SetTreeModified(True)
-
     def OnRestore(self, event):  # Handles the "Delete Modified" button
         modifiedFilename = GetModifiedFilename(self.demoModules.name)
         self.demoModules.Delete(modModified)
@@ -477,8 +475,6 @@ class DemoCodePanel(wx.Panel):
         busy = wx.BusyInfo("Reloading demo module...")
 
         self.ActiveModuleChanged()
-
-        self.mainFrame.SetTreeModified(False)
 
 #---------------------------------------------------------------------------
 
